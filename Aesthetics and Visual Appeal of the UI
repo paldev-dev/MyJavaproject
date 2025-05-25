@@ -1,0 +1,51 @@
+import java.awt.*;
+public class TrafficLightUI extends JPanel {
+  private String currentColor = "RED";
+  public void setColor(String color) {
+    this.currentColor = color;
+    repaint();
+  }
+  protected void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    g.setColor(Color.GRAY);
+    g.fillRect(100, 30, 100, 260);
+    g.setColor(currentColor.equals("RED") ? Color.RED : Color.DARK_GRAY);
+    g.fillOval(120, 50, 60, 60);
+    g.setColor(currentColor.equals("YELLOW") ? Color.YELLOW : Color.DARK_GRAY);
+    g.fillOval(120, 120, 60, 60);
+    g.setColor(currentColor.equals("GREEN") ? Color.GREEN : Color.DARK_GRAY);
+    g.fillOval(120, 190, 60, 60);
+  }
+}import java.awt.*;
+import java.awt.event.*;
+public class Main {
+  public static void main(String[] args) {
+    JFrame frame = new JFrame("Traffic Light Simulator");
+    TrafficLightUI panel = new TrafficLightUI();
+    JButton redBtn = new JButton("Red");
+    JButton yellowBtn = new JButton("Yellow");
+    JButton greenBtn = new JButton("Green");
+    redBtn.addActionListener(e -> {
+      panel.setColor("RED");
+      TrafficLogDAO.logLightChange("RED");
+    });
+    yellowBtn.addActionListener(e -> {
+      panel.setColor("YELLOW");
+      TrafficLogDAO.logLightChange("YELLOW");
+    });
+    greenBtn.addActionListener(e -> {
+      panel.setColor("GREEN");
+      TrafficLogDAO.logLightChange("GREEN");
+    });
+    JPanel buttonPanel = new JPanel();
+    buttonPanel.add(redBtn);
+    buttonPanel.add(yellowBtn);
+    buttonPanel.add(greenBtn);
+    frame.setLayout(new BorderLayout());
+    frame.add(panel, BorderLayout.CENTER);
+    frame.add(buttonPanel, BorderLayout.SOUTH);
+    frame.setSize(320, 400);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setVisible(true);
+  }
+}
