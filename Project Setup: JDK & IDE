@@ -1,0 +1,2 @@
+The project can be developed using popular Java IDEs such as NetBeans, Eclipse, or IntelliJ IDEA, providing flexibility for developers.
+Ensure that JDK 17+ is installed and properly configured. The project leverages Java Swing for its Graphical User Interface (GUI) components.
