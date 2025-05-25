@@ -1,0 +1,2 @@
+The designed database schema needs to be executed in MySQL. This can be done efficiently using tools like phpMyAdmin, a popular web-based interface for MySQL, or directly through the Command Line Interface (CLI).
+Executing this schema creates the traffic_log table, which is crucial for logging all light color changes within the simulator, ensuring data persistence and traceability.
