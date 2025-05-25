@@ -1,0 +1,15 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+public class TrafficLogDAO {
+  public static void logLightChange(String color) {
+    try {
+      Connection conn = DBConnection.getConnection();
+      String sql = "INSERT INTO traffic_log (light_color) VALUES (?)";
+      PreparedStatement ps = conn.prepareStatement(sql);
+      ps.setString(1, color);
+      ps.executeUpdate();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
