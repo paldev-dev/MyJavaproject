@@ -1,0 +1,8 @@
+TrafficLightProject/
+The root directory for the entire project.
+Main.java
+Contains the primary entry point for the application, handling the main execution flow.
+TrafficLightUI.java
+Manages the visual representation and user interface elements of the traffic light.
+TrafficLightController.java
+Handles the logic and state changes of the traffic light, coordinating between the UI and other components.
