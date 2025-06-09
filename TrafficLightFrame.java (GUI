@@ -1,0 +1,10 @@
+This class creates the visual traffic light interface. It manages light changes 
+and saves states to the database using a timer.
+ Initialize Frame
+ Set up window title, size, and layout.
+ Create Lights
+ Generate red, yellow, and green light panels.
+ Start Cycle
+ Begin the timed traffic light sequence.
+ Update & Save
+ Change light colors and log state to DB
