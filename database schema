@@ -1,0 +1,6 @@
+ CREATE TABLE light_log ( 
+id INT AUTO_INCREMENT PRIMARY KEY,  
+light_color VARCHAR(10), 
+timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+ );
+ preencoded.png
