@@ -1,0 +1,10 @@
+TrafficLightSimulation.java (Main)
+ The main class initializes the Swing GUI for the traffic light simulation. It ensures the GUI runs on the Event Dispatch Thread
+ public class TrafficLightSimulation {  
+public static void main(String[] args) { 
+javax.swing.SwingUtilities.invokeLater(() ->
+ {      new TrafficLightFrame();
+ });  
+}
+ }
+ preencoded.png
