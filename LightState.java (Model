@@ -1,0 +1,17 @@
+ The LightState class models the state of a traffic light. It captures the color and the exact timestamp of the state change.
+ This model is crucial for logging and tracking the traffic light's operational history within the 
+import java.time.LocalDateTime;
+ public class LightState { 
+private String color;
+ private LocalDateTime timestamp; 
+public LightState(String color) {  
+this.color = color; 
+this.timestamp = LocalDateTime.now();
+ }
+ public String getColor() {
+ return color;
+ }
+ public LocalDateTime getTimestamp(){
+ return timestamp;
+}
+}
